@@ -50,7 +50,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -61,10 +61,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-deep-learning-ai-前4门课程笔记" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-pic" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/01/11/deep-learning-ai-前4门课程笔记/" class="article-date">
-  <time datetime="2018-01-11T10:02:38.000Z" itemprop="datePublished">2018-01-11</time>
+    <a href="/2018/01/11/pic/" class="article-date">
+  <time datetime="2018-01-11T12:09:02.000Z" itemprop="datePublished">2018-01-11</time>
 </a>
     
   </div>
@@ -75,7 +75,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/11/deep-learning-ai-前4门课程笔记/">deep learning ai 前4门课程笔记</a>
+      <a class="article-title" href="/2018/01/11/pic/">pic</a>
     </h1>
   
 
@@ -83,126 +83,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="regularization"><a href="#regularization" class="headerlink" title="regularization"></a>regularization</h1><ol>
-<li><code>l2 regularization</code></li>
-<li><code>dropout regularization</code></li>
-<li><code>data augmentation</code></li>
-<li><code>early stopping</code>å</li>
-</ol>
-<h2 id="why-regularization-reduces-overfitting"><a href="#why-regularization-reduces-overfitting" class="headerlink" title="why regularization reduces overfitting"></a>why regularization reduces overfitting</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">J(w^&#123;l&#125;,b^&#123;l&#125;) = \frac&#123;1&#125;&#123;m&#125;\sum_&#123;i=1&#125;^&#123;m&#125;l(y^&#123;i&#125;,y^&#123;i&#125;) + \frac&#123;\lambda &#125;&#123;2m&#125;\sum_&#123;l&#125;^&#123;l&#125;\left \| w^&#123;l&#125; \right \|_&#123;F&#125;^&#123;2&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/49902068F00B4EC0AA87669B31AF6C98/9409" alt="p1"></p>
-<p>the <code>$l$</code> layer output （before activation）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">z^&#123;l&#125; = w^&#123;l&#125;a^&#123;l-1&#125; + b^&#123;l&#125;</span><br></pre></td></tr></table></figure></p>
-<p>if <code>$ \lambda\uparrow$</code>   <code>$\rightarrow$</code>  <code>$w^{l}\downarrow$</code>，<code>$z$</code> will be <strong>roughly linear</strong>, then your whole network is just a linear network. And so your whole neral network will be computing something not too far from a big linear function which is threfore pretty simple function <strong>rather than a very complex</strong> highly non-linear function. So is much less able to overfit.</p>
-<h2 id="why-does-drop-out-work"><a href="#why-does-drop-out-work" class="headerlink" title="why does drop-out work"></a>why does drop-out work</h2><ul>
-<li>Intuition: Can’t rely on any one feature, so have to spread out weights.</li>
-</ul>
-<p><img src="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/29E1738D49C44C70A482B6E435213052/9442" alt="p1"></p>
-<ul>
-<li>With the inverted dropout technique, at test time:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">You do not apply dropout (do not randomly eliminate units), </span><br><span class="line">but keep the 1/keep_prob factor in the calculations used in training.</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="weight-initialization-for-Deep-Networks"><a href="#weight-initialization-for-Deep-Networks" class="headerlink" title="weight initialization for Deep Networks"></a>weight initialization for Deep Networks</h1><p><a href="http://andyljones.tumblr.com/post/110998971763/an-explanation-of-xavier-initialization" target="_blank" rel="noopener">An Explanation of Xavier Initialization</a></p>
-<p>In short, it helps signals reach deep into the network.</p>
-<ul>
-<li>If the weights in a network start too small, then the signal shrinks as it passes through each layer until it’s too tiny to be useful.</li>
-<li>If the weights in a network start too large, then the signal grows as it passes through each layer until it’s too massive to be useful.</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">the variance of the output is the variance of the input</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\text&#123;Var&#125;(W) = \frac&#123;2&#125;&#123;n_\text&#123;in&#125;&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="optimazation-algorithms-ADAM"><a href="#optimazation-algorithms-ADAM" class="headerlink" title="optimazation algorithms(ADAM)"></a>optimazation algorithms(ADAM)</h1><p>adam 由三部分组成：</p>
-<ol>
-<li>exponentially weighted averages</li>
-<li>bias correction</li>
-<li>RMSprop</li>
-</ol>
-<h2 id="exponentially-weighted-averages"><a href="#exponentially-weighted-averages" class="headerlink" title="exponentially weighted averages"></a>exponentially weighted averages</h2><p><img src="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/6BC42C757D2546238276515E39B3F378/9475" alt="p3"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v_t = \beta v_&#123;t-1&#125; + (1-\beta) \theta_t</span><br></pre></td></tr></table></figure>
-<h3 id="bias-correction"><a href="#bias-correction" class="headerlink" title="bias correction"></a>bias correction</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\frac&#123;v_t&#125;&#123;1-\beta^t&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Gradient-decent-with-momentum"><a href="#Gradient-decent-with-momentum" class="headerlink" title="Gradient decent with momentum"></a>Gradient decent with momentum</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">V_&#123;dw&#125; = \beta v_&#123;dw&#125; + (1 - \beta)dw</span><br><span class="line"></span><br><span class="line">V_&#123;db&#125; = \beta v_&#123;db&#125; + (1 - \beta)db</span><br><span class="line"></span><br><span class="line">w := w - \alpha V_&#123;dw&#125;</span><br><span class="line"></span><br><span class="line">b := b - \alpha V_&#123;db&#125;</span><br></pre></td></tr></table></figure>
-<p>Hyperparameters : <code>$\alpha,\beta$</code></p>
-<h2 id="RMSprop"><a href="#RMSprop" class="headerlink" title="RMSprop"></a>RMSprop</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">V_&#123;dw&#125; = \beta v_&#123;dw&#125; + (1 - \beta)dw^2</span><br><span class="line"></span><br><span class="line">V_&#123;db&#125; = \beta v_&#123;db&#125; + (1 - \beta)db^2</span><br><span class="line"></span><br><span class="line">w := w - \alpha \frac&#123;V_&#123;dw&#125;&#125;&#123;\sqrt&#123;V_&#123;dw&#125;&#125; + \epsilon&#125;</span><br><span class="line"></span><br><span class="line">b := b - \alpha \frac&#123;V_&#123;db&#125;&#125;&#123;\sqrt&#123;V_&#123;db&#125;&#125; + \epsilon&#125;</span><br></pre></td></tr></table></figure>
-<p>Hyperparameters : <code>$\alpha,\beta$</code></p>
-<h2 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">v_&#123;dw&#125; = \beta_1 v_&#123;dw&#125; + (1-\beta_1)dw, v_&#123;db&#125; = \beta_1 v_&#123;db&#125; + (1-\beta_1)db     &lt;--momentum</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s_&#123;dw&#125; = \beta_1 v_&#123;dw&#125; + (1-\beta_1)dw^2, s_&#123;db&#125; = \beta_1 v_&#123;db&#125; + (1-\beta_1)db^2     &lt;--RMSprop</span><br><span class="line"></span><br><span class="line">V_&#123;dw&#125;^&#123;corr&#125; = \frac&#123;v_&#123;dw&#125;&#125;&#123;1-\beta_1^t&#125;,V_&#123;db&#125;^&#123;corr&#125; = \frac&#123;v_&#123;db&#125;&#125;&#123;1-\beta_1^t&#125;</span><br><span class="line"></span><br><span class="line">S_&#123;dw&#125;^&#123;corr&#125; = \frac&#123;s_&#123;dw&#125;&#125;&#123;1-\beta_2^t&#125;,S_&#123;db&#125;^&#123;corr&#125; = \frac&#123;s_&#123;db&#125;&#125;&#123;1-\beta_2^t&#125;  &lt;-- bias correction</span><br><span class="line"></span><br><span class="line">w:=w-\alpha \frac&#123;v_&#123;dw&#125;^&#123;corr&#125;&#125;&#123;\sqrt&#123;S_&#123;dw&#125;&#125; + \epsilon&#125;</span><br><span class="line"></span><br><span class="line">b:=b-\alpha \frac&#123;v_&#123;db&#125;^&#123;corr&#125;&#125;&#123;\sqrt&#123;S_&#123;db&#125;&#125;+ \epsilon&#125; &lt;--RMSprop</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>why</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>momentum</td>
-<td>方向记忆</td>
-</tr>
-<tr>
-<td>RMSprop</td>
-<td>强度记忆</td>
-</tr>
-<tr>
-<td>Adam</td>
-<td>方向和强度的记忆</td>
-</tr>
-</tbody>
-</table>
-<h1 id="learing-rate-decay"><a href="#learing-rate-decay" class="headerlink" title="learing rate decay"></a>learing rate decay</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\alpha = 0.95^&#123;epoch&#125; \alpha_0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">\alpha = \frac&#123;k&#125;&#123;\sqrt&#123;epoch&#125;&#125;\alpha_0 </span><br><span class="line"></span><br><span class="line">or </span><br><span class="line"></span><br><span class="line">\alpha = \frac&#123;k&#125;&#123;\sqrt&#123;t&#125;&#125;\alpha_0</span><br></pre></td></tr></table></figure>
-<h1 id="why-Batch-Norm-work"><a href="#why-Batch-Norm-work" class="headerlink" title="why Batch Norm work"></a>why Batch Norm work</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BN 主要解决的问题是`internal covariate shift`，其次是`regularization`</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X^&#123;batch&#125; \xrightarrow&#123;w,b&#125;&#123;&#125; z^&#123;batch&#125; \xrightarrow[BN]&#123;\beta,A&#125; \tilde&#123;z&#125;^&#123;batch&#125;  \xrightarrow[]&#123;&#125; a</span><br></pre></td></tr></table></figure>
-<p>实际计算时，<code>$z^l$</code>的偏置<code>$b^l$</code>可以略去，用<code>$\beta^l$</code>解释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">z^l = w^l a^&#123;l-1&#125; + (b^&#123;l&#125;)  \xrightarrow[]&#123;&#125; z^l = w^l a^&#123;l-1&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">z_&#123;norm&#125; = A \frac&#123;z^l - \mu&#125;&#123;\sqrt&#123;var(z^l)&#125;&#125; + \beta^l</span><br></pre></td></tr></table></figure></p>
-<h2 id="internal-covariate-shift"><a href="#internal-covariate-shift" class="headerlink" title="internal covariate shift"></a>internal covariate shift</h2><p><img src="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/02ADC483628042D8BF6020386401B69B/9578" alt="image"></p>
-<h2 id="Batch-Norm-as-regularization"><a href="#Batch-Norm-as-regularization" class="headerlink" title="Batch Norm as regularization"></a>Batch Norm as regularization</h2><ul>
-<li>Each mini-batch is scaled by the mean/variance computed on just that mini-batch.</li>
-<li>This adds some noise to the values 𝑧^([𝑙]) within that minibatch. So similar to dropout, it adds some noise to each hidden layer’s activations. </li>
-<li>This has a slight regularization effect. </li>
-</ul>
-<h1 id="ML-strategy"><a href="#ML-strategy" class="headerlink" title="ML strategy"></a>ML strategy</h1><h2 id="comparing-to-human-level-performance"><a href="#comparing-to-human-level-performance" class="headerlink" title="comparing to human-level performance"></a>comparing to human-level performance</h2><p>comparing to human_level performance, train error , test error to figure out <strong>avoidable bias</strong> and <strong>variance</strong>.</p>
-<p>machine learning algorithms can compete with human-level performance since they are more<br>productive and more feasible in a lot of application. Also, the workflow of designing and building a<br>machine learning system, is much more efficient than before.<br>Moreover, some of the tasks that humans do are close to <strong>‘’perfection’’</strong>, which is why machine learning<br>tries to mimic human-level performance.<br>The graph below shows the performance of humans and machine learning over time.</p>
-<p><img src="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/ADC7AA586627424C8DD531DC31C4BE63/9602" alt="p5"></p>
-<p>Machine learning progresses slowly when it surpasses human-level performance.</p>
-<ul>
-<li>One of the reason is<br>that <strong>human-level performance</strong> can be close to <strong>Bayes optimal error</strong>, especially for natural perception<br>problem.</li>
-<li><strong>Bayes optimal error is defined as the best possible error</strong>. In other words, it means that any functions<br>mapping from x to y can’t surpass a certain level of accuracy.</li>
-<li>Also, when the performance of machine learning is worse than the performance of humans, you can<br>improve it with different tools. They are harder to use once its surpasses human-level performance.</li>
-</ul>
-<p>These tools are:</p>
-<ul>
-<li>Get labeled data from humans</li>
-<li>Gain insight from manual error analysis: Why did a person get this right?</li>
-<li><strong>Better analysis of bias/variance.</strong></li>
-</ul>
-<h2 id="analysis-of-bias-variance"><a href="#analysis-of-bias-variance" class="headerlink" title="analysis of bias/variance."></a>analysis of bias/variance.</h2><p><img src="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/D5EA9AE325224293AC462124D5E17217/9615" alt="p6"></p>
-<p>Scenario A:</p>
-<blockquote>
-<ul>
-<li>There is a 7% gap between the performance of the training set and the human level error [<strong>avoidable bias</strong>]. It means that<br>the <strong>algorithm isn’t fitting well with the training</strong> set since the target is around 1%. </li>
-<li>To resolve the issue, we<br>use bias reduction technique such as training a bigger neural network or running the training set longer.</li>
-</ul>
-</blockquote>
-<p>Scenario B:</p>
-<blockquote>
-<ul>
-<li>The training set is doing good since there is only a 0.5% difference with the human level error. The<br>difference between the training set and the human level error is called avoidable bias. The focus here is<br>to reduce the variance since the difference between the training error and the development error is 2%.</li>
-<li>To resolve the issue, we use variance reduction technique such as regularization or have a bigger training<br>set.</li>
-</ul>
-</blockquote>
-<h1 id="error-analysis"><a href="#error-analysis" class="headerlink" title="error analysis"></a>error analysis</h1><p>Ideas for cat detection:</p>
-<ul>
-<li>Fix pictures of dogs being recognized as cats </li>
-<li>Fix great cats (lions, panthers, etc..) being misrecognized</li>
-<li>Improve performance on blurry images</li>
-</ul>
-<p><img src="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/60760827D4AB4D6F80606DEC1798A69A/9638" alt="p8"></p>
-<h1 id="training-and-testing-on-different-distributions"><a href="#training-and-testing-on-different-distributions" class="headerlink" title="training-and-testing-on-different-distributions"></a>training-and-testing-on-different-distributions</h1><h2 id="只有少量数据集，怎么做？"><a href="#只有少量数据集，怎么做？" class="headerlink" title="只有少量数据集，怎么做？"></a>只有少量数据集，怎么做？</h2><p>获取外部数据，和一部分内部数据混合训练，测试集合用内部数据集</p>
-<p><img src="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/B9E4F8917CD74DE9BD240D012E78CC68/9650" alt="p9"></p>
-<h2 id="bias-and-variance-with-mismatched-data-distributions"><a href="#bias-and-variance-with-mismatched-data-distributions" class="headerlink" title="bias-and-variance-with-mismatched-data-distributions"></a>bias-and-variance-with-mismatched-data-distributions</h2><p><img src="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/WEBRESOURCEe110940b03ec64242cf1e044bcd6ac24/9677" alt="p11"></p>
-<p><strong>get a train-dev dataset！</strong></p>
-<p><img src="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/CAA9CEF291FD4E4CB93746E6A0209210/9660" alt="p10"></p>
-<h1 id="题"><a href="#题" class="headerlink" title="题"></a>题</h1><p><img src="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/8F3C29DB5A08464EB880B0AFDF39476C/9628" alt="p7"></p>
-
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/11/deep-learning-ai-前4门课程笔记/" data-id="cjcabtfij000031s6njty3507" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/11/pic/" data-id="cjcagwugh0001ifs60rgl8oh8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -247,7 +132,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/11/hello-world/" data-id="cjcabtfio000131s63mwyzkr0" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/11/hello-world/" data-id="cjcagwug30000ifs6vsvdiw0i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -273,7 +158,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
     </div>
@@ -283,12 +168,12 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2018/01/11/deep-learning-ai-前4门课程笔记/">deep learning ai 前4门课程笔记</a>
+            <a href="/2018/01/11/pic/">pic</a>
           </li>
         
           <li>
