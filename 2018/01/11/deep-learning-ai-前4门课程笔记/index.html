@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/11/deep-learning-ai-前4门课程笔记/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="regularization l2 regularization dropout regularization data augmentation early stoppingå  why regularization reduces overfitting1J(w^&amp;#123;l&amp;#125;,b^&amp;#123;l&amp;#125;) = \frac&amp;#123;1&amp;#125;&amp;#123;m&amp;#125;\s">
-<meta property="og:image" content="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/49902068F00B4EC0AA87669B31AF6C98/9409">
+<meta property="og:image" content="http://yoursite.com/2018/01/11/deep-learning-ai-前4门课程笔记/deeplearningai1.png">
 <meta property="og:image" content="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/29E1738D49C44C70A482B6E435213052/9442">
 <meta property="og:image" content="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/6BC42C757D2546238276515E39B3F378/9475">
 <meta property="og:image" content="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/02ADC483628042D8BF6020386401B69B/9578">
@@ -24,11 +24,11 @@
 <meta property="og:image" content="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/WEBRESOURCEe110940b03ec64242cf1e044bcd6ac24/9677">
 <meta property="og:image" content="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/CAA9CEF291FD4E4CB93746E6A0209210/9660">
 <meta property="og:image" content="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/8F3C29DB5A08464EB880B0AFDF39476C/9628">
-<meta property="og:updated_time" content="2018-01-11T10:03:26.346Z">
+<meta property="og:updated_time" content="2018-01-11T12:29:49.401Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="deep learning ai 前4门课程笔记">
 <meta name="twitter:description" content="regularization l2 regularization dropout regularization data augmentation early stoppingå  why regularization reduces overfitting1J(w^&amp;#123;l&amp;#125;,b^&amp;#123;l&amp;#125;) = \frac&amp;#123;1&amp;#125;&amp;#123;m&amp;#125;\s">
-<meta name="twitter:image" content="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/49902068F00B4EC0AA87669B31AF6C98/9409">
+<meta name="twitter:image" content="http://yoursite.com/2018/01/11/deep-learning-ai-前4门课程笔记/deeplearningai1.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -78,7 +78,7 @@
         <section id="main"><article id="post-deep-learning-ai-前4门课程笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/01/11/deep-learning-ai-前4门课程笔记/" class="article-date">
-  <time datetime="2018-01-11T10:02:38.000Z" itemprop="datePublished">2018-01-11</time>
+  <time datetime="2018-01-11T12:26:48.000Z" itemprop="datePublished">2018-01-11</time>
 </a>
     
   </div>
@@ -104,7 +104,7 @@
 <li><code>early stopping</code>å</li>
 </ol>
 <h2 id="why-regularization-reduces-overfitting"><a href="#why-regularization-reduces-overfitting" class="headerlink" title="why regularization reduces overfitting"></a>why regularization reduces overfitting</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">J(w^&#123;l&#125;,b^&#123;l&#125;) = \frac&#123;1&#125;&#123;m&#125;\sum_&#123;i=1&#125;^&#123;m&#125;l(y^&#123;i&#125;,y^&#123;i&#125;) + \frac&#123;\lambda &#125;&#123;2m&#125;\sum_&#123;l&#125;^&#123;l&#125;\left \| w^&#123;l&#125; \right \|_&#123;F&#125;^&#123;2&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://note.youdao.com/yws/public/resource/a7ee35a748190f7fa0f7eb6e5438a46a/xmlnote/49902068F00B4EC0AA87669B31AF6C98/9409" alt="p1"></p>
+<p><img src="/2018/01/11/deep-learning-ai-前4门课程笔记/deeplearningai1.png" alt="p1"></p>
 <p>the <code>$l$</code> layer output （before activation）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">z^&#123;l&#125; = w^&#123;l&#125;a^&#123;l-1&#125; + b^&#123;l&#125;</span><br></pre></td></tr></table></figure></p>
 <p>if <code>$ \lambda\uparrow$</code>   <code>$\rightarrow$</code>  <code>$w^{l}\downarrow$</code>，<code>$z$</code> will be <strong>roughly linear</strong>, then your whole network is just a linear network. And so your whole neral network will be computing something not too far from a big linear function which is threfore pretty simple function <strong>rather than a very complex</strong> highly non-linear function. So is much less able to overfit.</p>
 <h2 id="why-does-drop-out-work"><a href="#why-does-drop-out-work" class="headerlink" title="why does drop-out work"></a>why does drop-out work</h2><ul>
@@ -216,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/11/deep-learning-ai-前4门课程笔记/" data-id="cjcabtfij000031s6njty3507" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/11/deep-learning-ai-前4门课程笔记/" data-id="cjcah1m8f0000r2s696lifjws" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -226,9 +226,9 @@
 <nav id="article-nav">
   
   
-    <a href="/2018/01/11/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/01/11/pic/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">pic</div>
     </a>
   
 </nav>
@@ -266,6 +266,10 @@
         
           <li>
             <a href="/2018/01/11/deep-learning-ai-前4门课程笔记/">deep learning ai 前4门课程笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/11/pic/">pic</a>
           </li>
         
           <li>
